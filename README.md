@@ -12,3 +12,5 @@ Google Colab (is recommended).
  matplotlib,
 keras,
 sklearn,
+# Run
+ pip install requirements.txt
