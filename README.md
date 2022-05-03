@@ -19,7 +19,7 @@ Splitting Data into a Training set and a Test set
 You will use the mid price calculated by taking the average of the highest and lowest recorded prices on a day.
 
 Now you can split the training data and test data. 
-# Normalizing the Data
+ Normalizing the Data
 Now you need to define a scaler to normalize the data. MinMaxScalar scales all the data to be in the region of 0 and 1. You can also reshape the training and test data to be in the shape [data_size, num_features].
 Due to the observation you made earlier, that is, different time periods of data have different value ranges, you normalize the data by splitting the full series into windows. If you don't do this, the earlier data will be close to 0 and will not add much value to the learning process. Here you choose a window size of 2500.
 
