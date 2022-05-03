@@ -5,7 +5,7 @@ A good understanding of Python programming language.
 A good understanding of neural networks.
 # Development environment
 Install Python and Tensorflow locally.
-Google Colab (is recommended).
+Google Colab
 # Libraries
  pandas,
  numpy ,
