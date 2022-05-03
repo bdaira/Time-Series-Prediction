@@ -18,11 +18,9 @@ sklearn,
 Splitting Data into a Training set and a Test set
 You will use the mid price calculated by taking the average of the highest and lowest recorded prices on a day.
 
-# First calculate the mid prices from the highest and lowest
-high_prices = df.loc[:,'High'].as_matrix()
-low_prices = df.loc[:,'Low'].as_matrix()
-mid_prices = (high_prices+low_prices)/2.0
-Now you can split the training data and test data. The training data will be the first 11,000 data points of the time series and rest will be test data.
+Now you can split the training data and test data. 
+# Normalizing the Data
+Now you need to define a scaler to normalize the data. MinMaxScalar scales all the data to be in the region of 0 and 1. You can also reshape the training and test data to be in the shape [data_size, num_features].
+Due to the observation you made earlier, that is, different time periods of data have different value ranges, you normalize the data by splitting the full series into windows. If you don't do this, the earlier data will be close to 0 and will not add much value to the learning process. Here you choose a window size of 2500.
 
-train_data = mid_prices[:11000]
-test_data = mid_prices[11000:]
+Tip: when choosing the window size make sure it's not too small, because when you perform windowed-normalization, it can introduce a break at the very end of each window, as each window is normalized independently.
